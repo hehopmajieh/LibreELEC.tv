@@ -29,9 +29,18 @@ case "$PROJECT" in
     PKG_PATCH_DIRS="rockchip"
     ;;
   *)
-    PKG_VERSION="d9110878895634cd9e8bf891c832d2a58b36863c"
-    PKG_SHA256="4d89dc15e5fa3bc9379c097d3315aba08ff6812b892b8900f4bef3fabb8ca1f5"
-    PKG_URL="https://github.com/u-boot/u-boot/archive/$PKG_VERSION.tar.gz"
+   case "$UBOOT_SYSTEM" in
+     lime*)
+       PKG_VERSION="v2019.04-olimex1"
+       PKG_SHA256="03d435bcd52268f51538293df859451b804c7952bf28eb71da4adac345d38e7c"
+       PKG_URL="https://github.com/OLIMEX/u-boot/archive/$PKG_VERSION.tar.gz"
+       ;;
+     *)
+       PKG_VERSION="d9110878895634cd9e8bf891c832d2a58b36863c"
+       PKG_SHA256="4d89dc15e5fa3bc9379c097d3315aba08ff6812b892b8900f4bef3fabb8ca1f5"
+       PKG_URL="https://github.com/u-boot/u-boot/archive/$PKG_VERSION.tar.gz"
+       ;;
+   esac
     ;;
 esac
 
